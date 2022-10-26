@@ -1,5 +1,5 @@
 {
-  "name": "@dbozhinovski/chakra-ui-reasonable-colors",
+  "name": "chakra-ui-reasonable-colors",
   "version": "1.0.0",
   "description": "A Chakra UI component that integrates the reasonable colors palette for easier accessibility (https://reasonable.work/colors/)",
   "main": "./dist/vite-ts-lib-starter.cjs",
@@ -18,8 +18,7 @@
     "lint:scripts": "eslint . --ext .ts",
     "lint:styles": "stylelint ./**/*.{css,scss}",
     "format:scripts": "prettier . --write",
-    "format:styles": "stylelint ./**/*.{css,scss} --fix",
-    "format": "npm run format:scripts && npm run format:styles",
+    "format": "npm run format:scripts",
     "prepare": "husky install && husky add .husky/pre-commit 'npx lint-staged' && git add .husky/pre-commit"
   },
   "devDependencies": {

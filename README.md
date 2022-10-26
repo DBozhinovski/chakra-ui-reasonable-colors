@@ -6,7 +6,7 @@ Inspired by my [tailwind](https://github.com/DBozhinovski/tailwind-reasonable-co
 
 ## Installation and usage
 
-- `run npm i @dbozhinovski/chakra-ui-reasonable-colors` to install the package.
+- `run npm i chakra-ui-reasonable-colors` to install the package.
 - The package comes in two flavors: `reasonableColorsThemeOverride` and `reasonableColorsThemeEnhance`
   - `reasonableColorsThemeOverride` overwrites the existing colors of Chakra's palette, where there are collisions and leaves the rest of the default theme intact.
   - `reasonableColorsThemeEnhance` enhances the existing palette, plus plays well with any existing modifications (when combined). All added colors from the reasonable colors palette are prefixed with an `r`. So `pink` becomes `rpink` and can be used, for example, via `rpink.300`.
@@ -19,9 +19,7 @@ Inspired by my [tailwind](https://github.com/DBozhinovski/tailwind-reasonable-co
 // App.tsx
 import { ChakraProvider, Text } from "@chakra-ui/react";
 
-import {
-  reasonableColorsThemeEnhance,
-} from "./theme";
+import { reasonableColorsThemeEnhance } from "./theme";
 
 function App() {
   return (
@@ -32,7 +30,6 @@ function App() {
 }
 
 export default App;
-
 ```
 
 ### Using override
@@ -41,9 +38,7 @@ export default App;
 // App.tsx
 import { ChakraProvider, Text } from "@chakra-ui/react";
 
-import {
-  reasonableColorsThemeOverride,
-} from "./theme";
+import { reasonableColorsThemeOverride } from "./theme";
 
 function App() {
   return (
@@ -54,5 +49,4 @@ function App() {
 }
 
 export default App;
-
 ```
