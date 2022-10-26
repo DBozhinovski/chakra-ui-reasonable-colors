@@ -1,60 +1,58 @@
-# vite-vanilla-ts-lib-starter
+# Reasonable colors for Chakra UI
 
-The starter is built on top of Vite 3.x and prepared for writing libraries in TypeScript. It generates a hybrid package - both support for CommonJS and ESM modules.
+## Motivation
 
-## Features
+Inspired by my [tailwind](https://github.com/DBozhinovski/tailwind-reasonable-colors) port, plus good karma and to learn more about Chakra UI's theming, I've ported the palette to Chakra UI as well. PRs open and contributions are welcome 🍻
 
-- Hybrid support - CommonJS and ESM modules
-- IIFE bundle for direct browser support without bundler
-- Typings bundle
-- ESLint - scripts linter
-- Stylelint - styles linter
-- Prettier - formatter
-- Jest - test framework
-- Husky + lint-staged - pre-commit git hook set up for formatting
+## Installation and usage
 
-## GitHub Template
+- `run npm i @dbozhinovski/chakra-ui-reasonable-colors` to install the package.
+- The package comes in two flavors: `reasonableColorsThemeOverride` and `reasonableColorsThemeEnhance`
+  - `reasonableColorsThemeOverride` overwrites the existing colors of Chakra's palette, where there are collisions and leaves the rest of the default theme intact.
+  - `reasonableColorsThemeEnhance` enhances the existing palette, plus plays well with any existing modifications (when combined). All added colors from the reasonable colors palette are prefixed with an `r`. So `pink` becomes `rpink` and can be used, for example, via `rpink.300`.
 
-This is a template repo. Click the green [Use this template](https://github.com/kbysiec/vite-vanilla-ts-lib-starter/generate) button to get started.
+## Examples
 
-## Clone to local
+### Using enhance
 
-If you prefer to do it manually with the cleaner git history
+```ts
+// App.tsx
+import { ChakraProvider, Text } from "@chakra-ui/react";
 
-```bash
-git clone https://github.com/kbysiec/vite-vanilla-ts-lib-starter.git
-cd vite-vanilla-ts-lib-starter
-npm i
+import {
+  reasonableColorsThemeEnhance,
+} from "./theme";
+
+function App() {
+  return (
+    <ChakraProvider theme={reasonableColorsThemeEnhance}>
+      <Text color={"rpowder.300"}>Hello World</Text>
+    </ChakraProvider>
+  );
+}
+
+export default App;
+
 ```
 
-## Checklist
+### Using override
 
-When you use this template, update the following:
+```ts
+// App.tsx
+import { ChakraProvider, Text } from "@chakra-ui/react";
 
-- Remove `.git` directory and run `git init` to clean up the history
-- Change the name in `package.json` - it will be the name of the IIFE bundle global variable and bundle files name (`.cjs`, `.mjs`, `.iife.js`, `d.ts`)
-- Change the author name in `LICENSE`
-- Clean up the `README` and `CHANGELOG` files
+import {
+  reasonableColorsThemeOverride,
+} from "./theme";
 
-And, enjoy :)
+function App() {
+  return (
+    <ChakraProvider theme={reasonableColorsThemeOverride}>
+      <Text color={"powder.300"}>Hello World</Text>
+    </ChakraProvider>
+  );
+}
 
-## Usage
+export default App;
 
-The starter contains the following scripts:
-
-- `dev` - starts dev server
-- `build` - generates the following bundles: CommonJS (`.cjs`) ESM (`.mjs`) and IIFE (`.iife.js`). The name of bundle is automatically taked from `package.json` name property
-- `test` - starts jest and runs all tests
-- `test:coverage` - starts jest and run all tests with code coverage report
-- `lint:scripts` - lint `.ts` files with eslint
-- `lint:styles` - lint `.css` and `.scss` files with stylelint
-- `format:scripts` - format `.ts`, `.html` and `.json` files with prettier
-- `format:styles` - format `.cs` and `.scss` files with stylelint
-- `format` - format all with prettier and stylelint
-- `prepare` - script for setting up husky pre-commit hook
-
-## Acknowledgment
-
-If you found it useful somehow, I would be grateful if you could leave a star in the project's GitHub repository.
-
-Thank you.
+```

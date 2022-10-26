@@ -1,5 +1,6 @@
 import path from "path";
 import { defineConfig } from "vite";
+import react from '@vitejs/plugin-react';
 import packageJson from "./package.json";
 
 const getPackageName = () => {
@@ -21,12 +22,13 @@ const fileName = {
 };
 
 module.exports = defineConfig({
+  plugins: [react()],
   base: "./",
   build: {
     lib: {
-      entry: path.resolve(__dirname, "src/index.ts"),
+      entry: path.resolve(__dirname, "src/theme/index.ts"),
       name: getPackageNameCamelCase(),
-      formats: ["es", "cjs", "iife"],
+      formats: ["es", "cjs"],
       fileName: (format) => fileName[format],
     },
   },

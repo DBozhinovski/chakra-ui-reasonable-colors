@@ -13,9 +13,9 @@
     "noEmit": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noImplicitReturns": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["vite/client", "node", "jest"]
+    "types": ["vite/client", "node", "jest", "react"],
+    "jsx": "react-jsx"
   },
   "include": ["src"],
   "exclude": ["**/*.test.ts", "node_modules", "test/**", ".history/**"]
