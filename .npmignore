@@ -1,0 +1,10 @@
+# all the crap that's not neccessary for the npm module to work
+node_modules
+src
+test
+.eslintignore
+.eslintrc
+.gitignore
+.npmignore
+.travis.yml
+vite.config.ts

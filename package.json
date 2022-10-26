@@ -1,13 +1,13 @@
 {
   "name": "chakra-ui-reasonable-colors",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "A Chakra UI component that integrates the reasonable colors palette for easier accessibility (https://reasonable.work/colors/)",
-  "main": "./dist/vite-ts-lib-starter.cjs",
-  "module": "./dist/vite-ts-lib-starter.mjs",
+  "main": "./dist/chakra-ui-reasonable-colors.cjs",
+  "module": "./dist/chakra-ui-reasonable-colors.mjs",
   "exports": {
     ".": {
-      "require": "./dist/vite-ts-lib-starter.cjs",
-      "import": "./dist/vite-ts-lib-starter.mjs"
+      "require": "./dist/chakra-ui-reasonable-colors.cjs",
+      "import": "./dist/chakra-ui-reasonable-colors.mjs"
     }
   },
   "scripts": {
@@ -73,5 +73,6 @@
   "bugs": {
     "url": "https://github.com/DBozhinovski/chakra-ui-reasonable-colors/issues"
   },
-  "homepage": "https://github.com/DBozhinovski/chakra-ui-reasonable-colors#readme"
+  "homepage": "https://github.com/DBozhinovski/chakra-ui-reasonable-colors#readme",
+  "types": "./dist/chakra-ui-reasonable-colors.d.ts"
 }
