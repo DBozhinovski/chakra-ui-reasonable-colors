@@ -1,6 +1,6 @@
 {
   "name": "chakra-ui-reasonable-colors",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "A Chakra UI component that integrates the reasonable colors palette for easier accessibility (https://reasonable.work/colors/)",
   "main": "./dist/chakra-ui-reasonable-colors.cjs",
   "module": "./dist/chakra-ui-reasonable-colors.mjs",
